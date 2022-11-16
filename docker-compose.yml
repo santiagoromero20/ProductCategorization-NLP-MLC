@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  api: 
+    image: santiagoromero20/product_categorization_api
+    ports: 
+      - 80:8000 #<port on localhost>:<port on container>
+    volumes:
+      - ./:/usr/src/app:ro
+    environment:
+      - DATABASE_HOSTNAME=postgres
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - postgres-db:/var/lib/postgresql/data 
+
+volumes:
+  postgres-db:
