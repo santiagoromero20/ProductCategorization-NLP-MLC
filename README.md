@@ -113,7 +113,7 @@ Let's take a quick overview on each module:
 
 You can pull the image from DockerHub, to do so you must have an account. If you don´t, you can clone my project into your local repo and run this command:
 
-      docker-compose -f docker-compose-prod.yml up -d
+      docker-compose -f docker-compose.yml up -d
 
 By doing this you will be building the image and start running your container on the same step, it isn´t mandatory to do it in this way as there are others, it´s just a recommendation. On the Dockerfile, you can see the use of two services (the app itself and the database) which logically are started by different images. The App image is declare and "build" it on the Dockerfile and the Postgresql is the official one from DockerHub. 
 
