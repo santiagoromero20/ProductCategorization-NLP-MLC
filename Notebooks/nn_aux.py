@@ -4,7 +4,7 @@ from sklearn import metrics
 import operator
 from keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-import text_normalizer
+from Notebooks import text_normalizer
 
 #FUNCTIONS USE TO GET AND PLOT METRICS
 
